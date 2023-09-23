@@ -12,3 +12,10 @@ class MyContextManager:
 
 with MyContextManager("mcm") as cm:
     print(">> actual work")
+
+""" Actual output is:
+init mcm
+enter
+>> actual work
+exit
+"""
