@@ -42,3 +42,7 @@ or
 ## Secret key update
 
     python -c 'import secrets; print(secrets.token_hex())'
+
+## Run with prod server
+
+    waitress-serve --call 'flaskr:create_app'
