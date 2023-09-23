@@ -29,3 +29,16 @@ or
     coverage run -m pytest
     coverage report
     coverage html
+
+## Build
+
+    python -m build --wheel
+
+## Install in a new env
+
+    pip install flaskr-1.0.0-py3-none-any.whl
+    flask --app flaskr init-db
+
+## Secret key update
+
+    python -c 'import secrets; print(secrets.token_hex())'
