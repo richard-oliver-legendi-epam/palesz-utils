@@ -48,3 +48,7 @@ or
 ## Run with prod server
 
     waitress-serve --call 'flaskr:create_app'
+
+## TODO
+* Linting in the tutorial???
+* 
