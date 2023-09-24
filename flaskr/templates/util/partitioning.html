@@ -6,10 +6,12 @@
 
 {% block content %}
   <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <input type="submit" value="Save">
+    <label for="volume">Alszes mennyisége főzés előtt (liter)</label>
+    <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}" required>
+
+    <label for="output">A kívánt alkoholszint eléréséhez szükséges víz mennyisége:</label>
+    <textarea name="output" id="output" disabled="disabled">{{ output }}</textarea>
+
+    <input type="submit" value="Számolás">
   </form>
 {% endblock %}
