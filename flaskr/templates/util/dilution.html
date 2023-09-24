@@ -7,13 +7,13 @@
 {% block content %}
   <form method="post">
     <label for="volume">Mennyiség (liter)</label>
-    <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}" required>
+    <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}" step="0.01" required>
 
     <label for="act_alcohol_level">Mostani alkoholszint (%)</label>
-    <input name="act_alcohol_level" id="act_alcohol_level" value="{{ request.form['act_alcohol_level'] }}" required>
+    <input name="act_alcohol_level" id="act_alcohol_level" value="{{ request.form['act_alcohol_level'] }}" step="0.01" required>
 
     <label for="target_alcohol_level">Elérni kívánt alkoholszint (%)</label>
-    <input name="target_alcohol_level" id="target_alcohol_level" value="{{ request.form['target_alcohol_level'] }}" required>
+    <input name="target_alcohol_level" id="target_alcohol_level" value="{{ request.form['target_alcohol_level'] }}" step="0.01" required>
 
     <label for="output">A kívánt alkoholszint eléréséhez szükséges víz mennyisége:</label>
     <input name="output" id="output" value="{{ output }}" disabled="disabled">
