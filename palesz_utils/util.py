@@ -37,7 +37,7 @@ def dilution() -> str:
     return render_template('util/dilution.html')
 
 
-@bp.route('/partitioning', methods=('GET', 'POST'))
+@bp.route('/separation', methods=('GET', 'POST'))
 def partitioning() -> str:
     if request.method == 'POST':
         try:
@@ -61,6 +61,6 @@ def partitioning() -> str:
             return render_template('util/partitioning.html', output=output)
         except Exception as e:
             flash(str(e))
-            return render_template('util/partitioning.html')
+            return render_template('util/separation.html')
 
-    return render_template('util/partitioning.html')
+    return render_template('util/separation.html')
