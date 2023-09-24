@@ -4,11 +4,7 @@ Sample app based on https://flask.palletsprojects.com/en/2.3.x/tutorial/
 
 ## Running the app
 
-    flask --app flaskr run --debug
-
-## Initializing the DB
-
-    flask --app flaskr init-db
+    flask --app palesz_utils run --debug
 
 ## Installing pkg
 
@@ -38,8 +34,7 @@ or
 
 ## Install in a new env
 
-    pip install flaskr-1.0.0-py3-none-any.whl
-    flask --app flaskr init-db
+    pip install palesz_utils-1.0.0-py3-none-any.whl
 
 ## Secret key update
 
@@ -47,7 +42,7 @@ or
 
 ## Run with prod server
 
-    waitress-serve --call 'flaskr:create_app'
+    waitress-serve --call 'palesz_utils:create_app'
 
 ## TODO
 * Linting in the tutorial???
@@ -56,4 +51,3 @@ or
 * Add unit tests, trivial only
 * Add coverage reporting
 * Add license
-* Add footer
