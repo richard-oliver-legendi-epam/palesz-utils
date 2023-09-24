@@ -22,6 +22,7 @@ def dilution() -> str:
             assert volume > 0, "A liter pozitív kell legyen!"
             assert act_alcohol_level > 0, "Az mostani alkoholszint pozitív kell legyen!"
             assert target_alcohol_level > 0, "Az elérni kívánt alkoholszint pozitív kell legyen!"
+            assert 100 > act_alcohol_level, "Na azt hogy csináltad, h 100%-nál nagyobb az alkoholszint?!"
 
             assert target_alcohol_level < act_alcohol_level, \
                 "Az elérni kívánt alkoholszint kisebb kell legyen, mint a mostani!"
