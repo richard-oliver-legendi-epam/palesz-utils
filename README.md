@@ -51,3 +51,6 @@ or
 * Add unit tests, trivial only
 * Add coverage reporting
 * Add license
+
+### TODO Later
+* Split util to dilution/separation
