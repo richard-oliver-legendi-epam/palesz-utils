@@ -29,8 +29,8 @@ def dilution() -> str:
                 "Az elérni kívánt alkoholszint kisebb kell legyen, mint a mostani!"
 
             output_value: float = (volume * act_alcohol_level / target_alcohol_level) - volume
-            output: str = (f"({volume:.2f} * {act_alcohol_level:.2f} / {target_alcohol_level:.2f}) - {volume:.2f} "
-                           f"== {output_value:.2f} deciliter vízre van szükség")
+            output: str = (f"({volume:.2f}L * {act_alcohol_level:.2f}% / {target_alcohol_level:.2f}%) - {volume:.2f}L "
+                           f"== {output_value:.2f} Liter vízre van szükség")
 
             return render_template('util/dilution.html', output=output)
         except Exception as e:
