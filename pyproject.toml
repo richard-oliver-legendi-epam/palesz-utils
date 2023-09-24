@@ -1,9 +1,9 @@
 # [Tom's Obvious Minimal Language]...
 
 [project]
-name = "flaskr"
+name = "PaleszUtils"
 version = "1.0.0"
-description = "The basic blog app built in the Flask tutorial."
+description = "The basic palesz app built on the Flask tutorial."
 dependencies = [
     "flask",
 ]
