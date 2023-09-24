@@ -58,7 +58,7 @@ def partitioning() -> str:
             Ebből a rézeleje (mindenképp kuka): {copper_part_min:.2f} dL - {copper_part_max:.2f} dL
             Az rézeleje után nyert előpárlat, amit poharazni lehet:  {head_min:.2f} dL - {head_max:.2f} dL""")
 
-            return render_template('util/partitioning.html', output=output)
+            return render_template('util/separation.html', output=output)
         except Exception as e:
             flash(str(e))
             return render_template('util/separation.html')
