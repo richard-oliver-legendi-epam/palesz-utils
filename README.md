@@ -45,12 +45,11 @@ or
     waitress-serve --call 'palesz_utils:create_app'
 
 ## TODO
-* Linting in the tutorial???
-* Dockerize
-* Host somewhere
-* Add unit tests, trivial only
-* Add coverage reporting
+* Transfer repo
 * Add license
+* Add linting
+* Host somewhere
+* Dockerize
 
 ### TODO Later
 * Split util to dilution/separation
