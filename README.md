@@ -51,4 +51,7 @@ or
 
 ## TODO
 * Linting in the tutorial???
-* 
+* Dockerize
+* Host somewhere
+* Add unit tests, trivial only
+* Add coverage reporting
