@@ -6,14 +6,6 @@
   <ul>
     <li><a href="{{ url_for('util.dilution') }}">Higítás</a>
     <li><a href="{{ url_for('util.partitioning') }}">Elválasztás</a>
-
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
   </ul>
 </nav>
 <section class="content">
