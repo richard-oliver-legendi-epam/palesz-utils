@@ -55,3 +55,5 @@ or
 * Host somewhere
 * Add unit tests, trivial only
 * Add coverage reporting
+* Add license
+* Add footer
