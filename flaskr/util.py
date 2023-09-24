@@ -6,6 +6,8 @@ from werkzeug.exceptions import abort
 from flaskr.auth import login_required
 from flaskr.db import get_db
 
+import textwrap
+
 bp = Blueprint('util', __name__)
 
 # werkzeug - szerszam
@@ -35,11 +37,33 @@ def dilution() -> str:
             return render_template('util/dilution.html', output=output)
         except Exception as e:
             flash(str(e))
-            return render_template('util/dilution.html')
-    else:
-        return render_template('util/dilution.html')
+    return render_template('util/dilution.html')
 
 
 @bp.route('/partitioning', methods=('GET', 'POST'))
 def partitioning() -> str:
+    if request.method == 'POST':
+        try:
+            volume: float = float(request.form['volume'])
+
+            assert volume > 0, "A liter pozitív kell legyen!"
+
+            full_head_min: float = volume * 0.05
+            full_head_max: float = volume * 0.2
+            copper_part_min: float = volume * 0.03
+            copper_part_max: float = volume * 0.05
+            head_min: float = volume * 0.05
+            head_max: float = volume * 0.15
+
+            output: str = textwrap.dedent(f"""\
+            Az előpárlat várható teljes mennyisége: {full_head_min} dL - {full_head_max} dL
+            
+            Ebből a rézeleje (mindenképp kuka): {copper_part_min} dL - {copper_part_max} dL
+            Az rézeleje után nyert előpárlat, amit poharazni lehet:  {head_min} dL - {head_max} dL""")
+
+            return render_template('util/partitioning.html', output=output)
+        except Exception as e:
+            flash(str(e))
+            return render_template('util/partitioning.html')
+
     return render_template('util/partitioning.html')

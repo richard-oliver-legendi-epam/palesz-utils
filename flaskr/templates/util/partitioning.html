@@ -11,7 +11,7 @@
     <label for="volume">Alszes mennyisége főzés előtt (liter)</label>
     <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}"  step="0.01" required>
 
-    <label for="output">A kívánt alkoholszint eléréséhez szükséges víz mennyisége:</label>
+    <label for="output">Az előpárlatra vonatkozó mennyiségek:</label>
     <textarea name="output" id="output" disabled="disabled">{{ output }}</textarea>
 
     <input type="submit" value="Számolás">
