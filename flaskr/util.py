@@ -14,7 +14,7 @@ bp = Blueprint('util', __name__)
 
 
 @bp.route('/dilution', methods=('GET', 'POST'))
-def dilution():
+def dilution() -> str:
     if request.method == 'POST':
         try:
             volume: float = float(request.form['volume'])
@@ -38,3 +38,8 @@ def dilution():
             return render_template('util/dilution.html')
     else:
         return render_template('util/dilution.html')
+
+
+@bp.route('/partitioning', methods=('GET', 'POST'))
+def partitioning() -> str:
+    return render_template('util/partitioning.html')
