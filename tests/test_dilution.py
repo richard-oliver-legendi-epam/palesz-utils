@@ -31,3 +31,9 @@ def test_dilution_errors(client, volume, act_alcohol_level, target_alcohol_level
                                               'target_alcohol_level': target_alcohol_level})
 
     assert message in response.data
+
+
+def test_mail_link(client):
+    response = client.get('/dilution')
+
+    assert b"mailto:" in response.data

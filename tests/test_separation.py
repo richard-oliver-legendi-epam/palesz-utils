@@ -17,3 +17,9 @@ def test_separation_errors(client):
     response = client.post('/separation', data={'volume': 0})
 
     assert b'A liter pozit\xc3\xadv kell legyen!' in response.data
+
+
+def test_mail_link(client):
+    response = client.get('/separation')
+
+    assert b"mailto:" in response.data
