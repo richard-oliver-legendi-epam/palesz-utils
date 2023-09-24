@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, render_template, request
 )
 
 import textwrap
@@ -19,13 +19,12 @@ def dilution() -> str:
             act_alcohol_level: float = float(request.form['act_alcohol_level'])
             target_alcohol_level: float = float(request.form['target_alcohol_level'])
 
-            assert volume > 0, "A liter pozitív kell legyen!"
-            assert act_alcohol_level > 0, "Az mostani alkoholszint pozitív kell legyen!"
-            assert target_alcohol_level > 0, "Az elérni kívánt alkoholszint pozitív kell legyen!"
-            assert 100 > act_alcohol_level, "Na azt hogy csináltad, h 100%-nál nagyobb az alkoholszint?!"
-
+            assert volume > 0, 'A liter pozitív kell legyen!'
+            assert act_alcohol_level > 0, 'A mostani alkoholszint pozitív kell legyen!'
+            assert target_alcohol_level > 0, 'Az elérni kívánt alkoholszint pozitív kell legyen!'
+            assert 100 >= act_alcohol_level, 'Na azt hogy csináltad, h 100%-nál nagyobb az alkoholszint?!'
             assert target_alcohol_level < act_alcohol_level, \
-                "Az elérni kívánt alkoholszint kisebb kell legyen, mint a mostani!"
+                'Az elérni kívánt alkoholszint kisebb kell legyen, mint a mostani!'
 
             output_value: float = (volume * act_alcohol_level / target_alcohol_level) - volume
             output: str = (f"({volume:.2f}L * {act_alcohol_level:.2f}% / {target_alcohol_level:.2f}%) - {volume:.2f}L "
@@ -43,7 +42,7 @@ def partitioning() -> str:
         try:
             volume: float = float(request.form['volume'])
 
-            assert volume > 0, "A liter pozitív kell legyen!"
+            assert volume > 0, 'A liter pozitív kell legyen!'
 
             full_head_min: float = volume * 0.05
             full_head_max: float = volume * 0.2
