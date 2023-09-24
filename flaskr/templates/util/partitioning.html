@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %}
+  Max. 2 tizedesjegy adható meg.
+
   <form method="post">
     <label for="volume">Alszes mennyisége főzés előtt (liter)</label>
-    <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}" required>
+    <input type="number" name="volume" id="volume" value="{{ request.form['volume'] }}"  step="0.01" required>
 
     <label for="output">A kívánt alkoholszint eléréséhez szükséges víz mennyisége:</label>
     <textarea name="output" id="output" disabled="disabled">{{ output }}</textarea>

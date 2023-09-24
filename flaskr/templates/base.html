@@ -7,7 +7,6 @@
     <li><a href="{{ url_for('util.dilution') }}">Higítás</a>
     <li><a href="{{ url_for('util.partitioning') }}">Elválasztás</a>
 
-
     {% if g.user %}
       <li><span>{{ g.user['username'] }}</span>
       <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
